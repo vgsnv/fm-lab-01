@@ -1,0 +1,33 @@
+{
+	"printWidth": 120,
+	"singleQuote": true,
+	"semi": false,
+	"useTabs": true,
+	"bracketSpacing": false,
+	"jsxBracketSameLine": false,
+	"trailingComma": "all",
+	"importOrder": [
+		"^@env$",
+		"^(react|react-native)$",
+		"<THIRD_PARTY_MODULES>",
+		"^@tanstack/(.*)$",
+		"^(react-native-reanimated|react-native-svg)$",
+		"^@react-navigation/(.*)$",
+		"^api/(.*)$",
+		"^api",
+		"^screens",
+		"^constants/(.*)$",
+		"^navs",
+		"^core$",
+		"^helpers",
+		"^components/atoms(.*)$",
+		"^components/molecules(.*)$",
+		"^components/organisms(.*)$",
+		"^assets$",
+		"^(themes|themes/(.*))$",
+		"^[./]"
+	],
+	"importOrderSeparation": true,
+	"importOrderCaseInsensitive": true,
+	"plugins": ["@trivago/prettier-plugin-sort-imports"]
+}

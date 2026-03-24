@@ -1,10 +1,8 @@
+import { Pressable, Text, View } from "components/atoms";
 import { FC, useState } from "react";
 import { FlatList } from "react-native";
 import { useConfig } from "../constants/useConfig";
 import { useAstreamer } from "./astreamer";
-import { Pressable } from "./atoms/pressable";
-import { Text } from "./atoms/text";
-import { View } from "./atoms/view";
 
 const streams: {
   title: string;

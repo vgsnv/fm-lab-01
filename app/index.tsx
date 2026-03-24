@@ -1,7 +1,7 @@
-import { lightTheme } from "@/themes/light";
 import { ThemeProvider } from "@shopify/restyle";
 import { FC } from "react";
-import { Home } from "../components/home";
+import { lightTheme } from "themes/light";
+import { Home } from "../src/components/home";
 
 const Index: FC = () => {
   return (

@@ -11,7 +11,6 @@ export const useStreamer = (
   }
 
   const handlePlay = async (path: string) => {
-    // handleStop();
 
     if (streamerNode) {
       streamerNode.stop();

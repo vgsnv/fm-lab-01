@@ -1,0 +1,129 @@
+{
+	"root": true,
+	"extends": ["@react-native-community", "prettier"],
+	"plugins": ["react", "@typescript-eslint", "react-hooks", "prettier", "perfectionist"],
+	"rules": {
+		"react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+		"react-hooks/exhaustive-deps": "off",
+		"prettier/prettier": "error",
+		"perfectionist/sort-objects": [
+			"error",
+			{
+				"type": "alphabetical",
+				"order": "asc",
+				"partition-by-comment": "Part:**",
+				"groups": ["id", "unknown", "callback", "sizes"],
+				"custom-groups": {
+					"id": "id",
+					"callback": "on*",
+					"sizes": ["xs", "s", "se", "m", "l", "mle", "xl", "r"]
+				}
+			}
+		],
+
+		"perfectionist/sort-object-types": [
+			"error",
+			{
+				"type": "alphabetical",
+				"order": "asc",
+				"groups": ["unknown", "callback"],
+				"custom-groups": {
+					"callback": "on*"
+				}
+			}
+		],
+
+		"perfectionist/sort-interfaces": [
+			"error",
+			{
+				"type": "alphabetical",
+				"order": "asc",
+				"groups": ["unknown", "callback"],
+				"custom-groups": {
+					"callback": "on*"
+				}
+			}
+		],
+
+		"perfectionist/sort-maps": [
+			"error",
+			{
+				"type": "alphabetical",
+				"order": "asc"
+			}
+		],
+
+		"perfectionist/sort-array-includes": [
+			"error",
+			{
+				"type": "alphabetical",
+				"order": "asc",
+				"spread-last": true
+			}
+		],
+
+		"perfectionist/sort-enums": [
+			"error",
+			{
+				"type": "alphabetical",
+				"order": "asc"
+			}
+		],
+
+		"perfectionist/sort-exports": [
+			"error",
+			{
+				"type": "alphabetical",
+				"order": "asc"
+			}
+		],
+		"perfectionist/sort-named-exports": [
+			"error",
+			{
+				"type": "alphabetical",
+				"order": "asc"
+			}
+		],
+		"perfectionist/sort-union-types": [
+			"error",
+			{
+				"type": "alphabetical",
+				"order": "asc",
+				"nullable-last": true
+			}
+		],
+
+		"perfectionist/sort-jsx-props": [
+			"error",
+			{
+				"type": "natural",
+				"order": "asc",
+				"groups": [
+					"keys",
+					"flex",
+					"margins",
+					"sizes",
+					"shorthand",
+					"multiline",
+					"unknown",
+					"style",
+					"render",
+					"callback"
+				],
+				"custom-groups": {
+					"keys": ["key", "id"],
+					"flex": ["flex"],
+					"margins": ["m", "p", "px", "py", "my", "mx", "bg", "mr", "ml", "pr", "pl"],
+					"sizes": ["height", "width"],
+					"style": "style*",
+					"render": "render*",
+					"callback": "on*"
+				}
+			}
+		],
+
+		"react-native/no-inline-styles": 0,
+		"no-unused-vars": "off",
+		"@typescript-eslint/no-unused-vars": "off"
+	}
+}

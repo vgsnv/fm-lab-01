@@ -1,9 +1,9 @@
-import { Theme } from "@/themes/default";
 import { createBox } from "@shopify/restyle";
 import {
   Pressable as NativePressable,
   PressableProps as NativePressableProps,
 } from "react-native";
+import { Theme } from "themes/default";
 
 export const Pressable = createBox<Theme, NativePressableProps>(
   NativePressable,
