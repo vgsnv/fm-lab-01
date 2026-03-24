@@ -1,11 +1,8 @@
-import { createBox } from "@shopify/restyle";
-import {
-  Pressable as NativePressable,
-  PressableProps as NativePressableProps,
-} from "react-native";
-import { Theme } from "themes/default";
+import {Pressable as NativePressable, PressableProps as NativePressableProps} from 'react-native'
 
-export const Pressable = createBox<Theme, NativePressableProps>(
-  NativePressable,
-);
-export type PressableProps = React.ComponentProps<typeof Pressable>;
+import {createBox} from '@shopify/restyle'
+
+import {Theme} from 'themes/default'
+
+export const Pressable = createBox<Theme, NativePressableProps>(NativePressable)
+export type PressableProps = React.ComponentProps<typeof Pressable>

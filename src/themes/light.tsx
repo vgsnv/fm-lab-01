@@ -1,9 +1,9 @@
-import { createTheme } from "@shopify/restyle";
+import {createTheme} from '@shopify/restyle'
 
-import { defaultTheme } from "./default";
+import {defaultTheme} from './default'
 
 export const lightTheme = createTheme({
-  ...defaultTheme,
-});
+	...defaultTheme,
+})
 
-export type Theme = typeof lightTheme;
+export type Theme = typeof lightTheme

@@ -1,6 +1,8 @@
-import { createBox } from "@shopify/restyle";
-import { ComponentProps } from "react";
-import { Theme } from "themes/default";
+import {ComponentProps} from 'react'
 
-export const View = createBox<Theme>();
-export type ViewProps = ComponentProps<typeof View>;
+import {createBox} from '@shopify/restyle'
+
+import {Theme} from 'themes/default'
+
+export const View = createBox<Theme>()
+export type ViewProps = ComponentProps<typeof View>

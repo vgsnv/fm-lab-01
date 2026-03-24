@@ -1,49 +1,47 @@
-import { useState } from "react";
-import { AudioContext, StreamerNode } from "react-native-audio-api";
+import {useState} from 'react'
 
-export const useStreamer = (
-  audioContextRef: React.RefObject<AudioContext | null>,
-) => {
-  const [streamerNode, setStreamerNode] = useState<StreamerNode>();
+import {AudioContext, StreamerNode} from 'react-native-audio-api'
 
-  if (audioContextRef && !audioContextRef.current) {
-    audioContextRef.current = new AudioContext();
-  }
+export const useStreamer = (audioContextRef: React.RefObject<AudioContext | null>) => {
+	const [streamerNode, setStreamerNode] = useState<StreamerNode>()
 
-  const handlePlay = async (path: string) => {
+	if (audioContextRef && !audioContextRef.current) {
+		audioContextRef.current = new AudioContext()
+	}
 
-    if (streamerNode) {
-      streamerNode.stop();
-    }
+	const handlePlay = async (path: string) => {
+		if (streamerNode) {
+			streamerNode.stop()
+		}
 
-    const newStreamerNode = audioContextRef?.current?.createStreamer();
+		const newStreamerNode = audioContextRef?.current?.createStreamer()
 
-    if (newStreamerNode && audioContextRef && audioContextRef?.current) {
-      console.log("newStreamerNode", newStreamerNode);
-      console.log("streamerNode", streamerNode);
+		if (newStreamerNode && audioContextRef && audioContextRef?.current) {
+			console.log('newStreamerNode', newStreamerNode)
+			console.log('streamerNode', streamerNode)
 
-      setTimeout(() => {
-        newStreamerNode.initialize(path);
-        if (newStreamerNode && audioContextRef && audioContextRef?.current) {
-          newStreamerNode.connect(audioContextRef?.current?.destination);
-          newStreamerNode.start(audioContextRef?.current?.currentTime);
-        }
+			setTimeout(() => {
+				newStreamerNode.initialize(path)
+				if (newStreamerNode && audioContextRef && audioContextRef?.current) {
+					newStreamerNode.connect(audioContextRef?.current?.destination)
+					newStreamerNode.start(audioContextRef?.current?.currentTime)
+				}
 
-        setStreamerNode(newStreamerNode);
-      }, 100);
-    }
-  };
+				setStreamerNode(newStreamerNode)
+			}, 100)
+		}
+	}
 
-  const handleStop = async () => {
-    if (streamerNode) {
-      streamerNode.stop();
-      setStreamerNode(undefined);
-    }
-  };
+	const handleStop = async () => {
+		if (streamerNode) {
+			streamerNode.stop()
+			setStreamerNode(undefined)
+		}
+	}
 
-  return {
-    status: !!streamerNode,
-    handlePlay,
-    handleStop,
-  };
-};
+	return {
+		status: !!streamerNode,
+		handlePlay,
+		handleStop,
+	}
+}
