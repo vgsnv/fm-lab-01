@@ -9,10 +9,6 @@ export const useConfig = () => {
     const screenHeight = Dimensions.get("screen").height;
     const screenWidth = Dimensions.get("screen").width;
 
-    const windowHeight = Dimensions.get("window").height;
-
-    const heightSafeScreen = screenHeight - bottomSpaceInsets - headerSpace;
-
     return {
       bottomSpace: bottomSpaceInsets,
       headerSpace,

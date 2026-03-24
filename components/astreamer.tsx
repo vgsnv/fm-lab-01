@@ -6,7 +6,7 @@ export const useAstreamer = () => {
 
   const audioContextRef = useRef<AudioContext | null>(null);
 
-  const handlePlay = async (path: string) => {
+  const handlePlay = async (path: string, cb: () => void) => {
     if (!streamerNode) {
       audioContextRef.current = new AudioContext();
 
@@ -41,9 +41,10 @@ export const useAstreamer = () => {
         setStreamerNode(streamer);
       }
     }
+    cb();
   };
 
-  const handleStop = async () => {
+  const handleStop = async (cb: () => void) => {
     const audioContext = audioContextRef?.current;
 
     if (audioContext && streamerNode) {
@@ -52,6 +53,7 @@ export const useAstreamer = () => {
         streamerNode,
       });
     }
+    cb();
   };
 
   return {
