@@ -2,7 +2,7 @@ import {useRef, useState} from 'react'
 
 import {AudioContext, StreamerNode} from 'react-native-audio-api'
 
-export const useAstreamer = () => {
+export const useAudioContext = () => {
 	const [streamerNode, setStreamerNode] = useState<StreamerNode>()
 
 	const audioContextRef = useRef<AudioContext | null>(null)

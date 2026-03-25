@@ -48,12 +48,12 @@ export const defaultTheme = createTheme({
 	spacing: {
 		le: 32,
 		ls: 25,
-		sm: 12, //---
+		sm: 12,
 		ss: 10,
 		xss: 6,
 		xxs: 2,
 		l: 20,
-		m: 16, //---
+		m: 16,
 		s: 8,
 		xl: 40,
 		xs: 4,
